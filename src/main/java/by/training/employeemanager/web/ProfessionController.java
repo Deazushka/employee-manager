@@ -34,5 +34,3 @@ public class ProfessionController {
         professionRepository.save(department);
     }
 }
-
-

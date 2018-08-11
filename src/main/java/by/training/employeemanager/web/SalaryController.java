@@ -67,6 +67,3 @@ public class SalaryController {
         return salaryResults;
     }
 }
-
-
-
