@@ -1,0 +1,259 @@
+GET
+
+http://localhost:8181/api/employee/
+--вывод данных всех пользователей.
+[
+    {
+        "id": 1,
+        "name": "Ranga",
+        "passportNumber": "E1234567",
+        "department": 1,
+        "professionId": 1,
+        "salaryBonus": 5
+    },
+    {
+        "id": 2,
+        "name": "Ravi",
+        "passportNumber": "A1234568",
+        "department": 2,
+        "professionId": 2,
+        "salaryBonus": 6
+    },
+    {
+        "id": 3,
+        "name": "Agnesh",
+        "passportNumber": "HB30872",
+        "department": 1,
+        "professionId": 3,
+        "salaryBonus": 7
+    },
+    {
+        "id": 4,
+        "name": "Boris",
+        "passportNumber": "HB14242",
+        "department": 2,
+        "professionId": 4,
+        "salaryBonus": 8
+    },
+    {
+        "id": 5,
+        "name": "Rosa",
+        "passportNumber": "BT231455",
+        "department": 1,
+        "professionId": 5,
+        "salaryBonus": 9
+    },
+    {
+        "id": 6,
+        "name": "Simon",
+        "passportNumber": "M515122",
+        "department": 2,
+        "professionId": 6,
+        "salaryBonus": 10
+    },
+    {
+        "id": 7,
+        "name": "Greg",
+        "passportNumber": "SA148812",
+        "department": 1,
+        "professionId": 7,
+        "salaryBonus": 11
+    }
+]
+
+http://localhost:8181/api/employee/{id}
+--вывод данных {id} пользователя.
+http://localhost:8181/api/employee/1
+{
+    "id": 1,
+    "name": "Ranga",
+    "passportNumber": "E1234567",
+    "department": 1,
+    "professionId": 1,
+    "salaryBonus": 5
+}
+http://localhost:8181/api/employee/byName/{name}
+--вывод данных по {name} пользователя.
+http://localhost:8181/api/employee/byName/Agnesh
+{
+    "id": 3,
+    "name": "Agnesh",
+    "passportNumber": "HB30872",
+    "department": 1,
+    "professionId": 3,
+    "salaryBonus": 7
+}
+http://localhost:8181/api/employee/byDepartment/{department}
+--сортирует пользователей по отделам, где 
+http://localhost:8181/api/department/
+[
+    {
+        "id": 1,
+        "department": "IT"
+    },
+    {
+        "id": 2,
+        "department": "HR"
+    }
+]
+список отделов.
+http://localhost:8181/api/employee/byDepartment/HR
+[
+    {
+        "id": 2,
+        "name": "Ravi",
+        "passportNumber": "A1234568",
+        "department": 2,
+        "professionId": 2,
+        "salaryBonus": 6
+    },
+    {
+        "id": 4,
+        "name": "Boris",
+        "passportNumber": "HB14242",
+        "department": 2,
+        "professionId": 4,
+        "salaryBonus": 8
+    },
+    {
+        "id": 6,
+        "name": "Simon",
+        "passportNumber": "M515122",
+        "department": 2,
+        "professionId": 6,
+        "salaryBonus": 10
+    }
+]
+http://localhost:8181/api/department/{id}
+--вывод данных {id} отдела.
+http://localhost:8181/api/department/2
+{
+    "id": 2,
+    "department": "HR"
+}
+http://localhost:8181/api/salary/{name}
+--вывод данных о з/п {name}, где
+http://localhost:8181/api/profession/
+[
+    {
+        "id": 1,
+        "professionName": "Programmer",
+        "salary": 20
+    },
+    {
+        "id": 2,
+        "professionName": "Manager",
+        "salary": 30
+    },
+    {
+        "id": 3,
+        "professionName": "Lead Manager",
+        "salary": 20
+    },
+    {
+        "id": 4,
+        "professionName": "Designer",
+        "salary": 30
+    },
+    {
+        "id": 5,
+        "professionName": "Manager",
+        "salary": 20
+    },
+    {
+        "id": 6,
+        "professionName": "Lead Manager",
+        "salary": 30
+    },
+    {
+        "id": 7,
+        "professionName": "Top Leader",
+        "salary": 20
+    }
+]
+список профессий и её ставка(rate).
+
+http://localhost:8181/api/salary/Agnesh
+{
+    "name": "Agnesh",
+    "rate": 20,
+    "bonus": 7,
+    "total": 27
+}
+http://localhost:8181/api/vacation/
+--вывод данных об отпусках всех пользователей.
+[
+    {
+        "id": 1,
+        "employeeID": 1,
+        "dateFrom": "2018-01-21",
+        "dateTo": "2018-01-22",
+        "approvedBy": 3
+    },
+    {
+        "id": 2,
+        "employeeID": 2,
+        "dateFrom": "2018-01-22",
+        "dateTo": "2018-01-23",
+        "approvedBy": 7
+    },
+    {
+        "id": 3,
+        "employeeID": 3,
+        "dateFrom": "2018-01-23",
+        "dateTo": "2018-01-24",
+        "approvedBy": 6
+    },
+    {
+        "id": 4,
+        "employeeID": 4,
+        "dateFrom": "2018-01-24",
+        "dateTo": "2018-01-25",
+        "approvedBy": null
+    }
+]
+http://localhost:8181/api/vacation/{id}
+--вывод данных об отпуске {id} пользователя.
+http://localhost:8181/api/vacation/4
+{
+    "id": 4,
+    "employeeID": 4,
+    "dateFrom": "2018-01-24",
+    "dateTo": "2018-01-25",
+    "approvedBy": null
+}
+
+POST
+
+http://localhost:8181/api/employee/
+--добавление данных (создание нового пользователя).
+{
+    "id": 8,
+    "name": "Mitya",
+    "passportNumber": "BB12332",
+    "department": 1,
+    "professionId": 2,
+    "salaryBonus": 7
+}
+http://localhost:8181/api/vacation/
+--добавление данных об отпуске
+{
+        "id": 8,
+        "employeeID": 8,
+        "dateFrom": "2018-01-22",
+        "dateTo": "2018-01-23",
+        "approvedBy": 7
+    }
+http://localhost:8181/api/profession/
+--добавление новой профессии
+    {
+        "id": 8,
+        "professionName": "High priest",
+        "salary": 22
+    }
+http://localhost:8181/api/department/
+--добавление нового отдела
+    {
+        "id": 3,
+        "department": "LP"
+    }

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+
+    <title>Hello!</title>
+</head>
+
+<body>
+<h1 class="display-2 text-center">Employee</h1>
+
+<div id="employee">
+    <div class="container">
+        <table class="table thead-dark text-center">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Passport Number</th>
+                <th scope="col">Department</th>
+                <th scope="col">Profession</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody id="employee-table">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr/>
+<h1 class="display-2 text-center">Salary</h1>
+
+<div id="salary">
+    <div class="container">
+        <table class="table table-striped text-center">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Employee</th>
+                <th scope="col">Rate</th>
+                <th scope="col">Bonus</th>
+                <th scope="col">Total</th>
+            </tr>
+            </thead>
+            <tbody id="salary-table">
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<hr/>
+<h1 class="display-2 text-center">Vacation</h1>
+
+<div id="vacation">
+    <div class="container">
+        <table class="table table-striped text-center">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Employee</th>
+                <th scope="col">Date From</th>
+                <th scope="col">Date To</th>
+                <th scope="col">Manager</th>
+            </tr>
+            </thead>
+            <tbody id="vacation-table">
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <div >
+            <form>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="employeeName">Имя сотрудника</label>
+                        <select class="form-control" id="employeeName">
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Выберите дату начала отпуска</label>
+                        <input type="date" name="bday" max="3000-12-31"
+                               min="1000-01-01" class="form-control it-startDate"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="ownerName">Имя руководителя</label>
+                        <select class="form-control" id="ownerName">
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label>Выберите дату конца отпуска</label>
+                        <input type="date" name="bday" min="1000-01-01"
+                               max="3000-12-31" class="form-control it-endDate"/>
+                    </div>
+                </div>
+                <br/>
+                <div class="form-row">
+                    <div class="col">
+                        <button type="button" id="completeForm" class="btn btn-outline-success" data-toggle="modal"
+                                data-target=".bd-example-modal-sm">ok
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div id="vacation-created" class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog"
+         aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <p class="h2 text-center">заявка отправлена</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/init.js"></script>
+<script src="js/actions.js"></script>
+</body>
+</html>
